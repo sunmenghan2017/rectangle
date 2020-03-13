@@ -42,7 +42,7 @@
     "rules": {
         "indent": [
             "error",
-            4,
+            2,
             {
                 "SwitchCase": 1,
                 "VariableDeclarator": {"var": 2, "let": 2, "const": 3}
@@ -63,6 +63,10 @@
         "no-redeclare":[
             "error",
             {"builtinGlobals":false}
+        ],
+        "no-console": [
+          "error",
+          { "allow": ["error"] }
         ]
     }
 }
