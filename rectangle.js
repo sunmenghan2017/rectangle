@@ -77,4 +77,5 @@ $(function() {
           i.val(e.area())
       }
   })
+  
 });
