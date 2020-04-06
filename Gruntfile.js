@@ -1,30 +1,30 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-    eslint: {
-      options: {
-        eslintrc: '.eslintrc.json'
-      },
-      target: ['*.js']
-    },
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
-      },
-      src: '*.css'
-    },
     htmlhint: {
       options: {
         htmlhintrc: '.htmlhintrc'
       },
-      src: '*.html'
+      src: ['*.html']
+    },
+    csslint: {
+      options: {
+        csslintrc: '.csslintrc'     
+      },
+      src: ['*.css']   
+    },
+    eslint: {
+      options: {
+        configFile: '.eslintrc.json'
+      },
+      target: ['*.js']
     },
     mocha: {
       test: {
-        src: ['test/index.html'],
+        src: ['test/index.html'],               
       },
       options: {
         run: true,
-        reporter: 'Spec'
+        reporter: 'Dot'
       }
     }
   });
@@ -34,8 +34,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-mocha');
 
-  grunt.registerTask('lint', ['htmlhint', 'csslint', 'eslint']);
+  grunt.registerTask('lint', ['htmlhint','csslint','eslint']);
   grunt.registerTask('unitTest', ['mocha']);
 };
-
-  
