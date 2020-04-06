@@ -10,6 +10,7 @@ after_script:
   - git config user.email "${USER_EMAIL}"
   - cp ../index.html .
   - cp ../rectangle.* .
+  - cp ../calc.js .
   - git add .
   - git commit -m "publish wet site"
   - git push --force --quiet "https://${ACC_token}@${GH_REF}" master:${BRANCH}
